@@ -4,6 +4,10 @@ import { User, generateToken } from '../Modules/User.js'
 import { ConfirmationMail } from '../Modules/Confirmationmail.js'
 import mail from '../Email/Emailsending.js'
 import randomString from '../Email/RandomString.js'
+import dotenv from 'dotenv'
+
+// dotenv configuration
+dotenv.config()
 
 const router = express.Router()
 
@@ -36,7 +40,7 @@ router.post("/",async(request,response)=>{
             {
                 userId:newUser._id,
                 token:tokenurl,
-                confirmationUrl:`http://localhost:3000/signup/${tokenurl}`
+                confirmationUrl:`${process.env.BASE_URL}/signup/${tokenurl}`
             }
         ).save()
         // sending email

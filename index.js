@@ -6,6 +6,9 @@ import signupRouter from './Routes/Signup.js'
 import { emailVerificationRouter } from './Routes/EmailConfirmation.js'
 import { loginRouter } from './Routes/Login.js'
 import { forgotRouter } from './Routes/Forgot.js'
+import { URLRouter } from './Routes/Shortning.js'
+import usersignin from './Controllers/UserAutentication.js'
+import { redirectRouter } from './Routes/RedirecctURL.js'
 
 // initializing the server using express
 const app = express()
@@ -36,7 +39,11 @@ app.use("/login",loginRouter)
 // forgot Router
 app.use("/forgot",forgotRouter)
 
+// URL Router
+app.use("/shorturl",usersignin,URLRouter)
 
+// redirect url router
+app.use("/",redirectRouter)
 
 // local host
 app.listen(process.env.PORT,()=>console.log(`server started at ${process.env.PORT}`))

@@ -13,11 +13,11 @@ const UrlSchema = new mongoose.Schema(
             required:true
         },
         longUrl:{
-            type:URL,
+            type:String,
             required:true
         },
         shortenedUrl:{
-            type:URL,
+            type:String,
             required:true
         },
         clicks:{

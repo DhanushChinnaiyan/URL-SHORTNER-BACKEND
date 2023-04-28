@@ -4,6 +4,10 @@ import { Token } from '../Modules/ForgotToken.js'
 import randomString from '../Email/RandomString.js'
 import mail from '../Email/Emailsending.js'
 import bcrypt from 'bcrypt'
+import dotenv from 'dotenv'
+
+// dotenv configuration
+dotenv.config()
 
 const router = express.Router()
 
@@ -22,7 +26,7 @@ router.post("/",async(request,response)=>{
             {
                 userId:user._id,
                 token:token,
-                tokenUrl:`http://localhost:3000/forgot/${token}`
+                tokenUrl:`${process.env.BASE_URL}/forgot/${token}`
             }
         ).save()
 
