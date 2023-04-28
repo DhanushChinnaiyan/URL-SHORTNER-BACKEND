@@ -29,7 +29,7 @@ const UserSchema = new mongoose.Schema(
 )
 
 export const generateToken = (id) => {
-    return jwt.sign({id},process.env.SECRET_KEY)
+    return jwt.sign({id},process.env.SECRET_KEY,{expiresIn:"1d"})
 }
 
 export const User = mongoose.model("users",UserSchema)
