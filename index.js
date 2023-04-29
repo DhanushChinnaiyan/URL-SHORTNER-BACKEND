@@ -9,6 +9,7 @@ import { forgotRouter } from './Routes/Forgot.js'
 import { URLRouter } from './Routes/Shortning.js'
 import usersignin from './Controllers/UserAutentication.js'
 import { redirectRouter } from './Routes/RedirecctURL.js'
+import { activationRouter } from './Routes/ActivateAccount.js'
 
 // initializing the server using express
 const app = express()
@@ -30,8 +31,12 @@ app.use(cors())
 // signup router
 app.use("/signup",signupRouter)
 
+// Account activation router
+app.use("/activate",activationRouter) 
+
 // email verifing router
 app.use("/verify",emailVerificationRouter)
+
 
 // login router
 app.use("/login",loginRouter)

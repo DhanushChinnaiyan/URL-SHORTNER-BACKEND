@@ -29,7 +29,7 @@ const mail = (url,Useremail,content,subject) => {
     if(err){
         console.log("mail error ",err)
     }else{
-        console.log("email has sent")
+        console.log("Email has been sent")
     }
     })
 }

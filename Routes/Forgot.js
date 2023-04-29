@@ -18,7 +18,7 @@ router.post("/",async(request,response)=>{
         // finds the user 
         const user = await User.findOne({email:request.body.email})
         if(!user) return response.status(400).json({message:"User Not Valid"})
-
+        if(user.accountStatus !== true) return response.status(400).json({message:"Please Activate Your Account"})
         // generate tokenurl
         const token = generateToken(user._id)
         // generates new token
