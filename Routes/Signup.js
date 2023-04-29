@@ -40,7 +40,7 @@ router.post("/",async(request,response)=>{
             {
                 userId:newUser._id,
                 token:tokenurl,
-                confirmationUrl:`${process.env.BASE_URL}/signup/${tokenurl}`
+                confirmationUrl:`${process.env.BASE_URL}/activate/${tokenurl}`
             }
         ).save()
         // sending email
