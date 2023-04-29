@@ -20,7 +20,7 @@ const MailSchema = new mongoose.Schema(
         Date:{
             type:Date,
             default:new Date(),
-            expires:3600
+            expires:"1h"
         }
     }
 )
