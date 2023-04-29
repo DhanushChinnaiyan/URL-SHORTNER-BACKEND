@@ -44,7 +44,7 @@ router.post("/",async(request,response)=>{
             }
         ).save()
         // sending email
-        mail(newEmailConfirmationUrl.confirmationUrl,request.body.email,"Activate Your Account")
+        mail(newEmailConfirmationUrl.confirmationUrl,request.body.email,"Click to activate your account","Activate Your Account")
 
         // sending user details
         response.status(200).json({user:newUser,token:newEmailConfirmationUrl})

@@ -33,7 +33,7 @@ router.post("/",async(request,response)=>{
         if(!newToken) return response.status(400).json({message:"Token error"})
 
         // sending email
-        mail(newToken.tokenUrl,request.body.email,"Click to change your password")
+        mail(newToken.tokenUrl,request.body.email,"Click to change your password","Reset Your Password")
         
         response.status(200).json({message:"email has sented successfully",token:newToken})
     } catch (error) {

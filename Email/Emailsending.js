@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'
 
 
-const mail = (url,Useremail,content) => {
+const mail = (url,Useremail,content,subject) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
         port:"465",
@@ -15,7 +15,7 @@ const mail = (url,Useremail,content) => {
     
     })
     
-    const messagesubject = "Reset Your Password"
+    const messagesubject = subject
     const mailtext = `${content} - ${url}`
     
     const info = {
