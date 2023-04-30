@@ -41,7 +41,7 @@ router.post("/:userId",async(request,response)=>{
                 userId:request.params.userId,
                 randomString:RandomString,
                 longUrl:request.body.longUrl,
-                shortenedUrl:`${process.env.BASE_URL}/s/${RandomString}`
+                shortenedUrl:`${process.env.URL_SHORTENER}/s/${RandomString}`
             }
         ).save()
 
