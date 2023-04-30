@@ -13,7 +13,6 @@ router.get("/s/:randomstring",async(request,response)=>{
         const longUrl = await Url.findOne({randomString:request.params.randomstring})
         if(!longUrl) return response.status(400).json({message:"Invalid URL"})
         await Url.updateOne({
-            shortenedUrl:longUrl.shortenedUrl,
             clicks:longUrl.clicks+1
         })
 
